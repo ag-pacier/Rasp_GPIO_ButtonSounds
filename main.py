@@ -15,6 +15,7 @@ sounds = []
 
 def find_sounds():
     ''' Hunt through sound_loc and list out all the valid sounds in the sounds list'''
+    global sounds
     files = listdir(sound_loc)
     for file in files:
         if file[-3:] in valid_types:
