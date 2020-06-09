@@ -26,7 +26,7 @@ def find_sounds():
 def play_sound():
     '''randomly pick a sound from the valid sounds list and play it'''
     sound = choice(find_sounds())
-    run('omxplayer', sound)
+    run(['omxplayer', sound])
     print("Played: " + sound)
 
 
