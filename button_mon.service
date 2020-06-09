@@ -1,0 +1,9 @@
+[Unit]
+Description=Simple Button Script
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/Rasp_GPIO_ButtonSounds/main.py
+
+[Install]
+WantedBy=multi-user.target
