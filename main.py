@@ -4,7 +4,6 @@
 from gpiozero import Button
 from playsound import playsound
 from os import listdir
-from os.path import isfile
 from sys import exit
 from random import choice
 from signal import pause
@@ -18,9 +17,8 @@ def find_sounds():
     ''' Hunt through sound_loc and list out all the valid sounds in the sounds list'''
     files = listdir(sound_loc)
     for file in files:
-        if isfile(sound_loc + file):
-            if file[-3:] in valid_types:
-                sounds.append(file)
+        if file[-3:] in valid_types:
+            sounds.append(file)
     if len(sounds) <= 0:
         exit("No sounds located at " + sound_loc)
 
