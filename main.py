@@ -2,12 +2,12 @@
 #Main loop for button
 
 from gpiozero import Button
-from time import sleep
 from playsound import playsound
 from os import listdir
 from os.path import isfile
 from sys import exit
 from random import choice
+from signal import pause
 
 big_button = Button(21)
 sound_loc = '/home/pi/sounds/'
