@@ -19,7 +19,7 @@ def find_sounds():
     files = listdir(sound_loc)
     for file in files:
         if isfile(sound_loc + file):
-            if file[:-3] in valid_types:
+            if file[-3:] in valid_types:
                 sounds.append(file)
     if len(sounds) <= 0:
         exit("No sounds located at " + sound_loc)
@@ -29,6 +29,7 @@ def play_sound():
     '''randomly pick a sound from the valid sounds list and play it'''
     sound = choice(sounds)
     playsound(sound_loc + sound)
+    print("Played: " + sound)
 
 
 if __name__ == "__main__":
