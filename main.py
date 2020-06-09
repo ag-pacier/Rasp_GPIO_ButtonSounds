@@ -16,7 +16,7 @@ def find_sounds():
     ''' Hunt through sound_loc and list out all the valid sounds in the sounds list'''
     sounds = []
     for file in listdir(sound_loc):
-        sounds.append(join(sound_loc, file)
+        sounds.append(join(sound_loc, file))
     if len(sounds) <= 0:
         exit("No sounds located at " + sound_loc)
     else:
