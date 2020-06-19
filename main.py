@@ -3,7 +3,7 @@
 
 from gpiozero import Button
 from os import listdir
-from os.path import join
+from os.path import join, splitext
 from sys import exit
 from random import choice
 from signal import pause
@@ -11,14 +11,16 @@ from subprocess import run
 
 big_button = Button(21)
 sound_loc = '/home/pi/sounds/'
+valid_types = ['.wav', '.mp3']
 
 def find_sounds():
     ''' Hunt through sound_loc and list out all the valid sounds in the sounds list'''
     sounds = []
     for file in listdir(sound_loc):
-        sounds.append(join(sound_loc, file))
+        if (splitext(file) in valid_types):
+            sounds.append(join(sound_loc, file))
     if len(sounds) <= 0:
-        exit("No sounds located at " + sound_loc)
+        exit("No valid sounds located at " + sound_loc)
     else:
         return sounds
 
